@@ -1,0 +1,23 @@
+<%= simple_form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.input :title, autofocus: true %>
+    <%= f.label :description %>
+    <%= f.cktext_area :description %>
+    <%= f.input :video %>
+    <%= f.label :"Operating System" %> <br>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
+    <br/>
+    <br />
+    <%= f.button :submit %>
+<% end %>

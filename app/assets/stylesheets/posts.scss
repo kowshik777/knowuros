@@ -1,0 +1,35 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+table{
+	border-collapse: collapse;
+}
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+}
+table tr td{
+	padding: 10px;
+}
+
+
+thead{
+	text-align: left;
+	background: #BB0000;
+	color: #FFF;
+}
+
+thead th {
+	font-size: 18px;
+  	line-height: 25px;
+	padding: 10px;
+}
+
+.list_line_even {
+	background: #FAEBD7;
+}
+
+.list_line_odd {
+	background: #FEFEFA;
+}

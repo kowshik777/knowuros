@@ -1,0 +1,41 @@
+<% @title="#{@post.title}" %>
+<link rel="stylesheet" href="video.css">
+<p id="notice"><%= notice %></p>
+  <table>
+  <tr>
+  <td>
+    <u><big><center><i><strong><font color="#602F4D"><%= @post.title %></font></strong></i></center></big></u>
+<br />
+<br />
+<br />
+<p>
+  <%= simple_format @post.description %>
+</p>
+<br />
+<br />
+<br />
+  <% if @post.video == '' %>
+  <% else %>
+  <div class="video-wrapper">
+  <iframe src="<%= "http://www.youtube.com/embed/"+@post.video %>"></iframe>
+  </div>
+  <% end %>
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+  <div>
+    <strong><%= comment.name %></strong>
+    <br />
+    <p><%= comment.body %></p>
+    <p><%= time_ago_in_words comment.created_at %> ago</p>
+  </div>
+<% end %>
+<%= render 'comments/form' %>
+<br />
+<button>
+<%= link_to 'Back', posts_path %>
+</button>
+</td>
+</tr>
+</table>
+
+  
