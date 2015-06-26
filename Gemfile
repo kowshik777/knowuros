@@ -4,6 +4,11 @@ ruby "2.2.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use mysql as the database for Active Record
+group :production do
+  gem 'pg'
+  gem 'rails_12factor', '0.0.2'
+end
+
 gem 'mysql2'
 # Use SCSS for stylesheets
 gem "therubyracer"
