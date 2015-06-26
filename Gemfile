@@ -4,12 +4,7 @@ ruby "2.2.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use mysql as the database for Active Record
-group 'development' do
-	gem 'mysql2'
-end
-group 'production' do
-	gem 'mysql2'
-end
+gem 'mysql2'
 # Use SCSS for stylesheets
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
