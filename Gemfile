@@ -36,6 +36,7 @@ gem 'simple_form'
 gem 'ckeditor', '~> 4.1.2'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'activeadmin', github: 'gregbell/active_admin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -14,18 +14,8 @@
  *= require_self
  *= require bootstrap_and_overrides
  */
-
- body {
-	background: #B6C4CE;
-}
-
 a:hover {
   color: #6F502F;
 }
 
-a {
-  text-decoration: none;
-  padding: 0px 0px 0px 20px;
-  font-weight: bold;
-  color: GREEN;
-}
+
