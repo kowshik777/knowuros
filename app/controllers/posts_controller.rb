@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
   if params[:category].blank?
-    @posts = Post.search(params[:search]).paginate(page: params[:page], per_page: 20)
+    @posts = Post.search(params[:search]).paginate(page: params[:page], per_page: 2)
   else
     @category_id = Category.find_by(name: params[:category]).id
     @posts = Post.where(category_id: @category_id).paginate(page: params[:page], per_page: 20)
