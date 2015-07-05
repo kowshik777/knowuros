@@ -1,23 +1,15 @@
-<%= simple_form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-    <%= f.input :title, autofocus: true %>
-    <%= f.label :description %>
-    <%= f.cktext_area :description %>
-    <%= f.input :video %>
-    <%= f.label :"Operating System" %> <br>
-    <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
-    <br/>
-    <br />
-    <%= f.button :submit %>
+<%= simple_form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :title %>
+  <%= error_span(@post[:title]) %>
+  <%= f.label :description %>
+  <%= f.cktext_area :description %>
+  <%= error_span(@post[:description]) %>
+  <%= f.input :video %>
+  <%= error_span(@post[:video]) %>
+  <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
+  <%= error_span(@post[:category_id]) %>
+  <br />
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                posts_path, :class => 'btn btn-default' %>
 <% end %>

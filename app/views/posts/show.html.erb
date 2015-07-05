@@ -1,25 +1,20 @@
+<%- model_class = Post -%>
 <% @title="#{@post.title}" %>
 <link rel="stylesheet" href="video.css">
-<p id="notice"><%= notice %></p>
-  <table>
-  <tr>
-  <td>
-    <u><big><center><i><strong><font color="#602F4D"><%= @post.title %></font></strong></i></center></big></u>
-<br />
-<br />
-<br />
-<p>
-  <%= simple_format @post.description %>
-</p>
-<br />
-<br />
-<br />
-  <% if @post.video == '' %>
-  <% else %>
+<div class="page-header">
+  
+</div>
+
+<dl class="dl-horizontal">
+  <dt></dt>
+  <dd><u><center><i><strong><font color="#602F4D"><%= @post.title %></font></strong></i></center></u></dd>
+  <dt></dt>
+  <dd><%= simple_format @post.description %></dd>
+  <dt></dt>
   <div class="video-wrapper">
-  <iframe src="<%= "http://www.youtube.com/embed/"+@post.video %>"></iframe>
+  <dd><iframe src="<%= "http://www.youtube.com/embed/"+@post.video %>"></iframe></dd>
   </div>
-  <% end %>
+</dl>
 <h3>Comments</h3>
 <% @comments.each do |comment| %>
   <div>
@@ -31,11 +26,6 @@
 <% end %>
 <%= render 'comments/form' %>
 <br />
-<button>
-<%= link_to 'Back', posts_path %>
-</button>
-</td>
-</tr>
-</table>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              posts_path, :class => 'btn btn-default'  %>
 
-  

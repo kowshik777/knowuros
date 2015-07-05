@@ -1,35 +1,35 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Post -%>
 <% @title="Know Your Operating System" %>
-<h1><h1>
-<table width='100%'>
+<div class="page-header">
+  
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th><center>Tips And Tricks For Your Operating System</center></th>
-      <th colspan="2"></th>
+      <th colspan="5" ><%= model_class.human_attribute_name(:Posts) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>
+      <%=t '.actions', :default => t("helpers.     ") %>
+      </th>
     </tr>
   </thead>
-
   <tbody>
     <% @posts.each do |post| %>
-      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-        <% if post.user == current_user %>
-        <td><%= link_to post.title, post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% else %>
-        <td colspan="2"><%= link_to post.title, post %></td>
-        <% end %>
-        </tr>
+      <tr>
+        <td colspan="5" ><%= link_to post.title, post_path(post) %></td>
+        <td><%=l post.created_at %></td>
+        <td>
+          <% if post.user == current_user %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_post_path(post), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      post_path(post),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+          <% end %>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
-<table>
-  <tbody>
-      <tr>
-        <td>
-          <%= will_paginate @posts, inner_window: 2, outer_windows: 2 %>
-        </td>
-      </tr>
-  </tbody>
-</table>
-
