@@ -33,3 +33,12 @@
     <% end %>
   </tbody>
 </table>
+<table>
+  <tbody>
+      <tr>
+        <td>
+          <%= will_paginate @posts, inner_window: 2, outer_windows: 2 %>
+        </td>
+      </tr>
+  </tbody>
+</table>
