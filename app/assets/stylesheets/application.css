@@ -17,5 +17,12 @@
 a:hover {
   color: #6F502F;
 }
+body {
+	background-color: #B6C4CE;
+}
+.design {
+	background-color: #FFF;
+	padding: 70px;
+}
 
 

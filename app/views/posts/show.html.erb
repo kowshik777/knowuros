@@ -4,17 +4,28 @@
 <div class="page-header">
   
 </div>
-
-<dl class="dl-horizontal">
-  <dt></dt>
-  <dd><u><center><i><strong><font color="#602F4D"><%= @post.title %></font></strong></i></center></u></dd>
-  <dt></dt>
-  <dd><%= simple_format @post.description %></dd>
-  <dt></dt>
-  <div class="video-wrapper">
-  <dd><iframe src="<%= "http://www.youtube.com/embed/"+@post.video %>"></iframe></dd>
-  </div>
-</dl>
+<table>
+  <tr>
+    <td>
+      <u><center><i><strong><font color="#602F4D"><%= @post.title %></font></strong></i></center></u>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= simple_format @post.description %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <% if @post.video == '' %>
+      <% else %>
+        <div class="video-wrapper">
+          <iframe src="<%= "http://www.youtube.com/embed/"+@post.video %>"></iframe>
+        </div>
+      <% end %>
+    </td>
+  </tr>
+</table>
 <h3>Comments</h3>
 <% @comments.each do |comment| %>
   <div>
