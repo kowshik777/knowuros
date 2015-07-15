@@ -6,10 +6,13 @@
   <%= error_span(@post[:description]) %>
   <%= f.input :video %>
   <%= error_span(@post[:video]) %>
-  <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
+  <strong><%= "Choose operating system"%></strong></br>
+  <br /><%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
   <%= error_span(@post[:category_id]) %>
   <br />
-  <%= f.button :submit, :class => 'btn-primary' %>
+  <br />
+  <br />
+  <button type="submit" class="btn btn-default">Submit</button>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 posts_path, :class => 'btn btn-default' %>
 <% end %>
