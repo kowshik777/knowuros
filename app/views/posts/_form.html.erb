@@ -6,7 +6,7 @@
   <%= error_span(@post[:description]) %>
   <%= f.input :video %>
   <%= error_span(@post[:video]) %>
-  <strong><%= "Choose operating system"%></strong></br>
+  <strong><%= "Choose operating system"%></strong>
   <br /><%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
   <%= error_span(@post[:category_id]) %>
   <br />
