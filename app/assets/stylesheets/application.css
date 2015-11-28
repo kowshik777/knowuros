@@ -14,15 +14,12 @@
  *= require_self
  *= require bootstrap_and_overrides
  */
-a:hover {
-  color: #6F502F;
-}
-body {
-	background-color: #008080;
-}
-.design {
-	background-color: #FFF;
-	padding: 70px;
-}
-
-
+ a{
+ 	color: rgb(100,010,192);
+ }
+ a.hover{
+ 	color: #00FF00;
+ }
+ .gap{
+ 	padding-top: 60px;
+ }

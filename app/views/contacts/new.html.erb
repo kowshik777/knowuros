@@ -1,7 +1,12 @@
-<% @title="Know Your Operating System" %>
-<h1>Contact Us</h1>
-
-<%= render 'form' %>
-<br />
-<br />
-<%= link_to 'Back', posts_path, :class => 'btn btn-default' %>
+<div style="padding-top: 70px;">
+<%= simple_form_for(@contact) do |f| %>
+    <%= f.input :name, autofocus: true, required: true %>
+    <%= f.input :email, required: true %>
+    <%= f.input :message, as: :text %>
+<div class="hidden">
+    <%= f.label :nickname %><br>
+    <%= f.text_field :nickname, hint: 'leave this field blank' %>
+</div>
+<%= f.submit 'Send Message', class: "btn btn-success" %>
+<% end %>
+</div>

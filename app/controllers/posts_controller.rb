@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
+  impressionist
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   def index
+  @email = current_user.try(:email)
   if params[:category].blank?
     @posts = Post.search(params[:search]).paginate(page: params[:page], per_page: 20)
   else

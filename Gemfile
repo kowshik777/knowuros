@@ -5,6 +5,7 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+gem 'impressionist'
 gem 'mysql2'
 gem "therubyracer"
 gem "less-rails" 
@@ -18,6 +19,7 @@ gem 'jbuilder'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'will_paginate'
+gem 'mail_form', '~> 1.5', '>= 1.5.1'
 gem 'simple_form'
 gem 'ckeditor'
 gem 'carrierwave'

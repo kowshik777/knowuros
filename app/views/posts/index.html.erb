@@ -1,21 +1,18 @@
 <%- model_class = Post -%>
-<% @title="Know Your Operating System" %>
+<% @title="Know Your Operating System-posts" %>
 <div class="page-header">
-  
+  <h1>Tips And Tricks For Your Operating System<small></small></h1>
 </div>
 <table class="table table-striped">
-  <thead>
-    <tr>
-      <th><center>Tips And Tricks For Your Operating System</center></th>
-      <th>
-      <%=t '.actions', :default => t("helpers.     ") %>
-      </th>
-    </tr>
-  </thead>
   <tbody>
     <% @posts.each do |post| %>
-      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <tr>
         <td><%= link_to post.title, post_path(post) %></td>
+          <td>
+            <% if current_user.try(:email) == 'kowshik16.kk@gmail.com' || current_user.try(:email) == 'chaitanyamalineni488@gmail.com' || current_user.try(:email) == 'harikirandev@gmail.com' || current_user.try(:email) == 'bobbasai33@gmail.com' || current_user.try(:email) == 'sreevaishu15@gmail.com' %>
+              <%= post.impressionist_count %>
+            <% end %>
+          </td>
         <td>
           <% if post.user == current_user %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

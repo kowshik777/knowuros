@@ -31,12 +31,11 @@
   <div>
     <strong><%= comment.name %></strong>
     <br />
-    <p><%= comment.body %></p>
-    <p><%= time_ago_in_words comment.created_at %> ago</p>
+    <p><%= comment.Comment %></p>
   </div>
 <% end %>
 <%= render 'comments/form' %>
 <br />
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              posts_path, :class => 'btn btn-default'  %>
+              posts_path, :class => 'btn btn-success'  %>
 
