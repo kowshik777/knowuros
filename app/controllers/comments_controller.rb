@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :edit, :update, :destroy, :create]
   def index
+    @email = current_user.try(:email)
     @comments = Comment.all
   end
   def show
