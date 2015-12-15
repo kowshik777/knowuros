@@ -18,10 +18,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'knowuros.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :address              => "smtp.gmail.com",
+  :address              => "mail.gmx.com",
   :port                 => 587,
-  :user_name            => 'kowshik16.kk@gmail.com',
-  :password             => 'kowshik777',
+  :user_name            => 'knowuros@gmx.com',
+  :password             => 'Hello@5friends',
   :authentication       => 'login',
   :enable_starttls_auto => true  }
 end
