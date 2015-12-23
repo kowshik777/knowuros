@@ -5,10 +5,10 @@ class PostsController < ApplicationController
   def index
   @email = current_user.try(:email)
   if params[:category].blank?
-    @posts = Post.search(params[:search]).paginate(page: params[:page], per_page: 20)
+    @posts = Post.search(params[:search]).paginate(page: params[:page], per_page: 10)
   else
     @category_id = Category.find_by(name: params[:category]).id
-    @posts = Post.where(category_id: @category_id).paginate(page: params[:page], per_page: 20)
+    @posts = Post.where(category_id: @category_id).paginate(page: params[:page], per_page: 10)
   end
   end
   def show
