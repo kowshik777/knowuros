@@ -16,10 +16,10 @@ Rails.application.configure do
   config.assets.compile = false
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.default_url_options = { :host => 'chaitu2.herokuapp.com' }
-  config.action_mailer.delivery_method = :mail
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :address              => "mail.gmx.com",
-  :port                 => 587,
+  :port                 => 25,
   :user_name            => 'knowuros@gmx.com',
   :password             => 'Hello@5friends',
   :authentication       => 'login',
