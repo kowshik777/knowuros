@@ -8,8 +8,8 @@ end
 gem 'impressionist'
 gem 'mysql2'
 gem 'friendly_id'
-gem "therubyracer"
-gem "less-rails" 
+gem 'therubyracer'
+gem 'less-rails' 
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
