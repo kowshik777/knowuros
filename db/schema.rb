@@ -60,14 +60,6 @@ ActiveRecord::Schema.define(version: 20151128090025) do
     t.text     "Comment",    limit: 65535
   end
 
-  create_table "contacts", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.text     "message",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "impressions", force: :cascade do |t|
     t.string   "impressionable_type", limit: 255
     t.integer  "impressionable_id",   limit: 4
