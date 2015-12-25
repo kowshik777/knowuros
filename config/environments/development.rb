@@ -9,7 +9,7 @@ Rails.application.configure do
   config.assets.debug = true
   config.assets.digest = true
   config.assets.raise_runtime_errors = true
-  config.action_mailer.default_url_options = { :host => 'chaitu2.herokuapp.com' } 
+  config.action_mailer.default_url_options = { :host => 'knowuros.herokuapp.com' } 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :address              => "mail.gmx.com",

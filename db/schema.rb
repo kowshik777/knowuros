@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128090025) do
+ActiveRecord::Schema.define(version: 20151225114726) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -60,6 +60,19 @@ ActiveRecord::Schema.define(version: 20151128090025) do
     t.text     "Comment",    limit: 65535
   end
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",           limit: 255, null: false
+    t.integer  "sluggable_id",   limit: 4,   null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope",          limit: 255
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
   create_table "impressions", force: :cascade do |t|
     t.string   "impressionable_type", limit: 255
     t.integer  "impressionable_id",   limit: 4
@@ -86,14 +99,21 @@ ActiveRecord::Schema.define(version: 20151128090025) do
   add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.string   "video",       limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "category_id", limit: 4
-    t.integer  "user_id",     limit: 4
+    t.string   "title",            limit: 255
+    t.text     "description",      limit: 65535
+    t.string   "video",            limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "category_id",      limit: 4
+    t.integer  "user_id",          limit: 4
+    t.text     "meta_description", limit: 65535
+    t.string   "permalink",        limit: 255
+    t.boolean  "no_index",         limit: 1
+    t.string   "meta_title",       limit: 255
+    t.string   "slug",             limit: 255
   end
+
+  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   limit: 255, default: "", null: false

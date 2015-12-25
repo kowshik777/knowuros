@@ -1,5 +1,4 @@
 <%- model_class = Post -%>
-<% @title="#{@post.title}" %>
 <link rel="stylesheet" href="video.css">
 <div class="page-header">
   
@@ -7,7 +6,7 @@
 <table>
   <tr>
     <td>
-      <u><center><i><strong><font color="#602F4D"><%= @post.title %></font></strong></i></center></u>
+      <h1><%= @post.title %><h1>
     </td>
   </tr>
   <tr>

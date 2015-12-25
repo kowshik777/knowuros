@@ -12,6 +12,14 @@ class PostsController < ApplicationController
   end
   end
   def show
+    if request.path != post_path(@post)
+      return redirect_to @post, :status => :moved_permanently
+    end
+    @title = @post.meta_title
+    @meta_description = @post.meta_description
+    if @post.no_index?
+      no_index_no_follow
+    end
   end
   def new
     @post = current_user.posts.build
@@ -56,7 +64,7 @@ class PostsController < ApplicationController
       @comment = @post.comments.build
     end
     def post_params
-      params.require(:post).permit(:title, :description, :video, :category_id)
+      params.require(:post).permit(:title, :description, :video, :category_id, :meta_title, :meta_description, :permalink, :no_index)
     end
     def video
       self.link.split('/').last if self.link

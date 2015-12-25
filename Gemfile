@@ -7,6 +7,7 @@ group :production do
 end
 gem 'impressionist'
 gem 'mysql2'
+gem 'friendly_id'
 gem "therubyracer"
 gem "less-rails" 
 gem 'sass-rails'
