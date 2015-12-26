@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:new, :index]
   get "posts/:id", to: redirect("/%{id}")
   resources :posts, :path => '', except: [:new, :index]
+  resources :posts
   resources :contacts, only: [:new, :create]
   resources :searches
   resources :home, only: [:index]
