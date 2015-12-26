@@ -15,7 +15,7 @@ Rails.application.configure do
   config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   config.assets.compile = false
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { :host => 'knowuros.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'peaceful-meadow-5940.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :address              => "mail.gmx.com",
