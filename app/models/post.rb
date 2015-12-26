@@ -2,6 +2,8 @@ class Post < ActiveRecord::Base
 	validates :meta_title, presence: true, uniqueness: true, :length => { :maximum => 60}
 	validates :meta_description, presence: true, uniqueness: true, :length => { :maximum => 160}
 	validates :permalink, presence: true, uniqueness: true
+	validates :title, presence: true
+	validates :description, presence: true
 	extend FriendlyId
 	friendly_id :permalink, use: [:slugged, :history, :finders]
 	is_impressionable
