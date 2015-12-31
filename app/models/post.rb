@@ -4,9 +4,9 @@ class Post < ActiveRecord::Base
 	validates :permalink, presence: true, uniqueness: true
 	validates :title, presence: true
 	validates :description, presence: true
+	is_impressionable
 	extend FriendlyId
 	friendly_id :permalink, use: [:slugged, :history, :finders]
-	is_impressionable
 	has_many :comments
 	belongs_to :category
 	belongs_to :user
