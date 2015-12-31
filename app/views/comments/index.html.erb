@@ -20,7 +20,7 @@
         <td><%= comment.Comment %></td>
         <td><%= comment.post_id %></td>
         <td><%= link_to 'Show', comment %></td>
-        <% if current_user.try(:email) == 'kowshik16.kk@gmail.com' || current_user.try(:email) == 'chaitanyamalineni488@gmail.com' || current_user.try(:email) == 'harikirandev@gmail.com' || current_user.try(:email) == 'bobbasai33@gmail.com' || current_user.try(:email) == 'sreevaishu15@gmail.com' %>
+        <% if current_user.try(:email) == 'knowuros@gmail.com' || current_user.try(:email) == 'knowuros@gmx.com' %>
         <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
         <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
