@@ -1,7 +1,7 @@
 class Contact < MailForm::Base
-	attribute :name, presence: true,	:validate => true
-	attribute :email, presence: true,   :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-	attribute :message, presence: true,	:validate => true
+	attribute :name,	:validate => true
+	attribute :email,   :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+	attribute :message,	:validate => true
 	attribute :nickname,:captcha  => true
 	def headers
     {
