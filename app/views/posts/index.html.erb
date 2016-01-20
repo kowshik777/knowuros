@@ -9,7 +9,7 @@
       <tr>
         <td><%= link_to post.title, post_path(post) %></td>
           <td>
-            <% if current_user.try(:email) == 'knowuros@gmail.com' || current_user.try(:email) == 'knowuros@gmx.com' %>
+            <% if current_user.try(:email) == 'knowuros@gmail.com' || current_user.try(:email) == 'knowuros@gmx.com' || current_user.try(:email) == 'kowshik16.kk@gmail.com' %>
               <%= post.impressionist_count %>
             <% end %>
           </td>
