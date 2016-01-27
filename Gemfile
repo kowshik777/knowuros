@@ -30,6 +30,5 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
-  gem 'dawnscanner', :require=>false
 end
 
