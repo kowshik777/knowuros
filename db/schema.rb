@@ -106,10 +106,10 @@ ActiveRecord::Schema.define(version: 20151225114726) do
     t.datetime "updated_at",                     null: false
     t.integer  "category_id",      limit: 4
     t.integer  "user_id",          limit: 4
+    t.string   "meta_title",       limit: 255
     t.text     "meta_description", limit: 65535
     t.string   "permalink",        limit: 255
-    t.boolean  "no_index",         limit: 1
-    t.string   "meta_title",       limit: 255
+    t.boolean  "no_index"
     t.string   "slug",             limit: 255
   end
 
