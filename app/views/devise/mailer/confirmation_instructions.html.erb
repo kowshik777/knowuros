@@ -1,43 +1,34 @@
 <p>Welcome <%= @email %>!</p>
 
-<p>This is M. Chaitanya from <a href="knowuros.herokuapp.com">know your operating system</a>. Thankyou for registering with our website. Now you are allowed to share your ideas and knowledge regarding your operating system. You can create,edit and destroy your posts any time after creation of a new post in our website.</p>
+<p>You can confirm your account email through the link below:</p>
 
-<h2>Creating new post in the website</h2>
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>This is K. Kowshik from <a href="knowuros.herokuapp.com">know your operating system</a>. Thankyou for registering with our website. Now you are allowed to share your ideas and knowledge regarding your operating system. You can create,edit and destroy your posts any time after creation of a new post in our website.</p>
+
+<h2>Creating new article in the website</h2>
 
 <p>once you Register in our website successfully then you can see New post in top right corner of webpage in our website click it to create new post in website.</p>
 
 <p>The following set of options are displayed in the webpage</p>
 
 <ol>
-	<li>Meta_title</li>
 	<li>Title</li>
+  <li>Meta_Description</li>
 	<li>Description</li>
-	<li>Meta_Description</li>
-	<li>Permalink</li>
-	<li>No Index Checkbox</li>
-	<li>Choose your operating system &</li>
+	<li>Category &amp;</li>
 	<li>Video</li>
 </ol>
 
-<p>Meta_Title: This field will become the link of the new webpage you will create in google. This has character limit of 60 characters.</p>
-
 <p>Title: This field has no character limit. This will generate a link for list of topics in our website. This is similar to metatitle.</p>
-
-<p>Description: This field is used to provide description about the topic in the website.</p>
 
 <p>Meta_description: In this field you need to give the description regarding the topic you are describing in the website</p>
 
-<p>Permalink: This will become the part of the new link generated for the webpage you are creating.</p>
+<p>Description: This field is used to provide description about the topic in the website.</p>
 
-<p>No_Index check box: The Meta_title, Meta_description and Permalink comes under the techniques of search engine optimization. If this checkbox is checked the search engine optimization deosn't work. If it is not checked the result will be displayed in google.</p>
-
-<p>Choose your operating system: The next step is to choose the category of the operating system. That is which operating system you are explaining about.</p>
+<p>Category: The next step is to choose the category of the operating system. That is which operating system the article is about.</p>
 
 <p>Video: The users are allowed to embed their youtube videos related to their topic in the website. Just by copy and pasting the youtube id the video is embedded to the website.
 <br />
-Ex: if the youtube video you want to embed is https://www.youtube.com/watch?v=xyz123. Then paste xyz123 in video textbox. Then the youtube video is embeded to website. 
+Ex: if the youtube video you want to embed is https://www.youtube.com/watch?v=xyz123. Then paste xyz123 in video textbox. Then the youtube video is embeded to website.
 </p>
-
-<p>You can confirm your account email through the link below:</p>
-
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>

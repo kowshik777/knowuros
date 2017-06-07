@@ -1,0 +1,24 @@
+<% @title="Know Your Operating System Edit Category" %>
+<h1>Editing Category</h1>
+
+<%= render 'form', category: @category %>
+
+<%= link_to 'Show', @category %> |
+<%= link_to 'Back', categories_path %>
+<script type='text/javascript'>
+
+  (function()
+  {
+    if( window.localStorage )
+    {
+      if( !localStorage.getItem('firstLoad') )
+      {
+        localStorage['firstLoad'] = true;
+        window.location.reload();
+      }
+      else
+        localStorage.removeItem('firstLoad');
+    }
+  })();
+
+  </script>

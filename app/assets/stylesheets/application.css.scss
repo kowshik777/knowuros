@@ -1,0 +1,117 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+body{
+  background-color: #7F0000;
+}
+.container{
+  background-color: #FFFFFF;
+}
+.Brand_Image{
+  width: 100px;
+  height: 100px;
+  background-size: auto;
+  border-radius: 7px;
+  float: left;
+}
+.navbar-brand #Brand_Text{
+  font-size: 35px;
+  float: left;
+}
+a{
+  color: #7F0000;
+}
+a:hover{
+  color: #00FF00;
+  background-color: #FFFFFF;
+  text-decoration: none;
+}
+.nav{
+  margin-bottom: 45px;
+}
+.navbar-brand small {
+  display:block;
+}
+.Menu{
+  position: relative;
+  border: 2px solid #3F0C1F;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25px;
+}
+.Menu .Menu_Text{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  font-size: 25px;
+  color: #FFFFFF;
+  background-color: #000000;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: .8;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.form-group{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.Intro-Text{
+  text-align: justify;
+}
+/* FOOTER */
+.panel-footer {
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #222;
+  border-top: 0;
+}
+.panel-footer .container{
+  background-color: #222;
+  color: #FFF;
+}
+.panel-footer .container a{
+  color: #BDB76B;
+}
+.panel-footer .container a:hover{
+  color: #FFFF00;
+  background-color: inherit;
+}
+.panel-footer div.row {
+  margin-bottom: 35px;
+}
+#feedback, #address {
+  line-height: 2;
+}
+#hours > span, #address > span {
+  font-size: 1.3em;
+}
+#address p {
+  color: #557c3e;
+  font-size: .8em;
+  line-height: 1.8;
+}
+#testimonials {
+  font-style: italic;
+}
+#testimonials p:nth-child(2) {
+  margin-top: 25px;
+}
+/* END FOOTER */

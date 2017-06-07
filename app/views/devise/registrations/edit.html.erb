@@ -1,18 +1,44 @@
-<% @title="Know Your Operating System" %>
+<% @title="Edit Account In Know Your Operating System" %>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-    <%= f.input :name, autofocus: true %>
-    <%= f.input :email %>
+
+  <div class="form-group">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, :class=>"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, :class=>"form-control" %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-    <%= f.input :password, autocomplete: "off" %>
-    <%= f.input :password_confirmation, autocomplete: "off" %>
-    <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.input :current_password, autocomplete: "off" %>
-    <%= f.button :submit "Update" %>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off", :class=>"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off", :class=>"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
 <% end %>
 
 <h3>Cancel my account</h3>

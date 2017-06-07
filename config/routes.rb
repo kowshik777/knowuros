@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  get "home/index", to: redirect("/know-your-operating-system")
-  get "/know-your-operating-system", to: "home#index"
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  devise_for :users, controllers: { registrations: "registrations" }
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :articles
   resources :comments
-  resources :posts, only: [:new, :index]
-  get "posts/:id", to: redirect("/%{id}")
-  resources :posts, :path => '', except: [:new, :index]
-  resources :posts
-  resources :contacts, only: [:new, :create]
-  resources :searches
-  resources :home, only: [:index]
+  resources :contacts
+  resources :categories do
+    collection do
+    get :articlecategory
+  end
+  end
+  devise_for :auth_users, :controllers => { registrations: 'registrations' }
+  get 'home/index'
+  root 'home#index'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

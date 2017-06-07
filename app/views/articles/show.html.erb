@@ -1,0 +1,37 @@
+<% @title="#{@article.title}" %>
+<ol class="breadcrumb">
+  <li><%= link_to "Home",home_index_url %></li>
+  <li>
+    <%= link_to "Articles",articles_url %>
+  </li>
+  <li class="active"><%= @article.title %></li>
+</ol>
+<h1 class="text-center">
+  <%= @article.title %>
+</h1>
+
+<p>
+  <%= simple_format @article.description %>
+</p>
+
+<p>
+  <% if @article.video == '' %>
+  <% else %>
+    <div class="video-wrapper">
+      <iframe src="<%= "http://www.youtube.com/embed/"+@article.video %>"></iframe>
+    </div>
+  <% end %>
+</p>
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+  <div>
+    <strong><%= comment.name %></strong>
+    <br>
+    <p><%= comment.comment %></p>
+    <p><%= time_ago_in_words(comment.created_at) unless comment.created_at.blank? %> ago</p>
+  </div>
+<% end %>
+<br>
+<%= render 'comments/form' %>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

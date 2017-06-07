@@ -1,0 +1,14 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+}
+.video-wrapper iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}

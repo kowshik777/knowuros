@@ -1,0 +1,35 @@
+<% @title="Know Your Operating System Aritcles" %>
+<ol class="breadcrumb">
+  <li><%= link_to "Home",home_index_url %></li>
+  <li class="active">
+    <%= link_to "Articles",articles_url %>
+  </li>
+</ol>
+<table class="table">
+<% if @articles.each do |article| %>
+  <tr>
+    <td>
+      <h3><%= link_to article.title, article %></h3>
+      <p>
+        <%= article.meta_description %>
+      </p>
+    </td>
+    <td>
+      <% if article.auth_user == current_auth_user %>
+        <td><h3><%= link_to 'Edit', edit_article_path(article) %></h3></td>
+        <td><h3><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></h3></td>
+      <% else %>
+        <td></td>
+        <td></td>
+      <% end %>
+    </td>
+  </tr>
+<% end.empty? %>
+  <h2>
+    Sorry! There are no Articles in this category.
+  </h2>
+  <%= link_to 'Back', articles_path, :class=>"btn btn-default" %>
+<% end %>
+</table>
+<br>
+<%= will_paginate @articles, inner_window: 2, outer_window: 2 %>
